@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class TracktorMovement : MonoBehaviour
 {
+    [Header("Fire Property")]
+    [SerializeField] private GameObject senoPrefab;
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private float fireRate;
+    private float nextFire;
+
+    [Header("Traktor Property")]
     [SerializeField] private float speed;
     [SerializeField] private float border;
     private float direction;
@@ -47,5 +54,11 @@ public class TracktorMovement : MonoBehaviour
         isPress = true;
     }
     
+    public void PressFire()
+    {
+        GameObject seno = Instantiate(senoPrefab, spawnPoint.position, Quaternion.identity); // senoPrefab.transform.rotation
+        Destroy(seno, 15f);
+        Debug.Log("Fire");
+    }
 
 }
