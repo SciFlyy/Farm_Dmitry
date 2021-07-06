@@ -16,9 +16,9 @@ public class TracktorMovement : MonoBehaviour
     private float direction;
     private bool isPress;
 
-    void Start()
+    private void Start()
     {
-        
+        nextFire = fireRate;
     }
 
 
@@ -35,6 +35,7 @@ public class TracktorMovement : MonoBehaviour
                 transform.Translate(Vector3.left * speed * direction * Time.deltaTime);
             }
         }
+        nextFire -= Time.deltaTime;
     }
     public void PressLeft()
     {
@@ -56,9 +57,15 @@ public class TracktorMovement : MonoBehaviour
     
     public void PressFire()
     {
-        GameObject seno = Instantiate(senoPrefab, spawnPoint.position, Quaternion.identity); // senoPrefab.transform.rotation
-        Destroy(seno, 15f);
-        Debug.Log("Fire");
+        if (nextFire > fireRate)
+        {
+            GameObject seno = Instantiate(senoPrefab, spawnPoint.position, Quaternion.identity); // senoPrefab.transform.rotation
+            Destroy(seno, 15f);
+            Debug.Log("Fire");
+
+            nextFire = 0;
+        }
+        
     }
 
 }
