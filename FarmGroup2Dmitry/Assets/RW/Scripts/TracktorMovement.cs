@@ -9,6 +9,8 @@ public class TracktorMovement : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float fireRate;
     private float nextFire;
+    [SerializeField] Transform senoContainer;
+
 
     [Header("Traktor Property")]
     [SerializeField] private float speed;
@@ -16,9 +18,9 @@ public class TracktorMovement : MonoBehaviour
     private float direction;
     private bool isPress;
 
-    private void Start()
+    void Start()
     {
-        nextFire = fireRate;
+      
     }
 
 
@@ -35,7 +37,6 @@ public class TracktorMovement : MonoBehaviour
                 transform.Translate(Vector3.left * speed * direction * Time.deltaTime);
             }
         }
-        nextFire -= Time.deltaTime;
     }
     public void PressLeft()
     {
@@ -57,13 +58,12 @@ public class TracktorMovement : MonoBehaviour
     
     public void PressFire()
     {
-        if (nextFire > fireRate)
+        if (Time.time > fireRate)
         {
+            nextFire = Time.time + fireRate;
             GameObject seno = Instantiate(senoPrefab, spawnPoint.position, Quaternion.identity); // senoPrefab.transform.rotation
             Destroy(seno, 15f);
-            Debug.Log("Fire");
-
-            nextFire = 0;
+            seno.transform.transform.SetParent(senoContainer.transform);
         }
         
     }
