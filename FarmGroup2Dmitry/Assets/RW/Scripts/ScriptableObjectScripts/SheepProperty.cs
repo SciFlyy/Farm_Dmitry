@@ -33,6 +33,14 @@ public class SheepProperty : ScriptableObject
     {
         get
         {
+            if(speed == 0)
+            {
+                speed = 5f;
+            }
+            else
+            {
+                return speed;
+            }
             return speed;
         }
        // private set

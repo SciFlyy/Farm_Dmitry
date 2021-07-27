@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sheep : MonoBehaviour
 {
-    [SerializeField] private SheepProperty sheepProperty;
+    [SerializeField] private List<SheepProperty> sheepProperty;
     
     [SerializeField] private float startSpeed;
     [SerializeField] private Vector3 moveDirection;
@@ -18,8 +18,10 @@ public class Sheep : MonoBehaviour
     private Rigidbody rb;
     private BoxCollider bc;
     private float moveSpeed;
-
+    int randomSheepPropertyIndex;
     private MeshRenderer nb;
+
+    [SerializeField] private SoundManager soundManager;
 
 
     private void Awake()
@@ -30,14 +32,17 @@ public class Sheep : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Log(sheepProperty.Name); // get
-        sheepProperty.Name = "Baran"; //set
-        Debug.Log(sheepProperty.Name); // get
+        int randomSheepPropertyIndex = Random.Range(0, sheepProperty.Count);
+
+
+        Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
+        sheepProperty[randomSheepPropertyIndex].Name = "Baran"; //set
+        Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
 
 
 
-        moveSpeed = sheepProperty.Speed;
-        nb.material = sheepProperty.Material;
+        moveSpeed = sheepProperty[randomSheepPropertyIndex].Speed;
+        nb.material = sheepProperty[randomSheepPropertyIndex].Material;
     }
 
     void Update()
@@ -60,6 +65,9 @@ public class Sheep : MonoBehaviour
         GameObject particle = Instantiate(heartParticlePrefab, transform.position + sheepOffset, heartParticlePrefab.transform.rotation); // senoPrefab.transform.rotation
         Destroy(particle, 2f);
         Destroy(gameObject, 0.9f);
+
+        soundManager.PlaySheepHitClip();
+
     }
 
 

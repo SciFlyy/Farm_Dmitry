@@ -126,10 +126,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c617a63b2aa384291741d6c9dce5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheepProperty: {fileID: 11400000, guid: 914b4f7082a236948bf19c249bca44f9, type: 2}
+  sheepProperty:
+  - {fileID: 11400000, guid: 914b4f7082a236948bf19c249bca44f9, type: 2}
+  - {fileID: 11400000, guid: 86f75e655d844bf458061246c09646b1, type: 2}
+  - {fileID: 11400000, guid: 9542fd5116fe8f34b9747440909ecd0f, type: 2}
   startSpeed: 10
   moveDirection: {x: 0, y: -1, z: 0}
   force: 700
   heartParticlePrefab: {fileID: 8134747155766010565, guid: aee393e596436814f9be1aecbe5da9ef, type: 3}
   sheepOffset: {x: 0, y: 5, z: 0}
   jumpForce: 200
+  soundManager: {fileID: 11400000, guid: ef35278defba52c44961494e3c553e32, type: 2}
