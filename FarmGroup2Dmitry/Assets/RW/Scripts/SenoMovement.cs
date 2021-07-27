@@ -11,14 +11,12 @@ public class SenoMovement : MonoBehaviour
 
     private Transform senoModel;
 
-
-
     void Start()
     {
         senoModel = transform.GetChild(0);
     }
 
-    
+     
     void Update()
     {
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
@@ -26,15 +24,20 @@ public class SenoMovement : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other) //other <-- объект с которым мы столкнулись
+
+    private void OnTriggerEnter(Collider col)
     {
-        if (other.gameObject.tag == "SenoDestroyTrigger") // other.CompareTag("SenoDestroyTrigger")
+        Sheep sheep = col.GetComponent<Sheep>();       
+        if(sheep != null)
         {
+            sheep.SaveSheep();
             Destroy(gameObject);
         }
-        //if (other.gameObject.name == "SenoDestroyTrigger") // other.CompareTag("SenoDestroyTrigger")
-        //{
-        //    Destroy(gameObject);
-        //}
+
+        if (col.gameObject.tag == "SenoDestroyTrigger") // other.CompareTag("SenoDestryTrigger")
+        {
+            Destroy(gameObject);            
+        }
     }
 }
+
