@@ -137,3 +137,4 @@ MonoBehaviour:
   sheepOffset: {x: 0, y: 5, z: 0}
   jumpForce: 200
   soundManager: {fileID: 11400000, guid: ef35278defba52c44961494e3c553e32, type: 2}
+  scoreManager: {fileID: 11400000, guid: 564e848afef838e4591c297713872efb, type: 2}

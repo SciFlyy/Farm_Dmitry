@@ -31,7 +31,7 @@ public class SoundManager : ScriptableObject
         {
             PlaySound(sheepDropClip);
         }
-    }
+}
 
 
 

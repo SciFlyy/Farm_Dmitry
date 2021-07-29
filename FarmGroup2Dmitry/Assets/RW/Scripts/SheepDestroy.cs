@@ -10,7 +10,7 @@ public class SheepDestroy : MonoBehaviour
 
         if(sheep != null)
         {
-            Destroy(other.gameObject);
+            sheep.DestroySheep();
         }
     }
 }

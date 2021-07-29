@@ -11,6 +11,8 @@ public class TracktorMovement : MonoBehaviour
     private float nextFire;
     [SerializeField] Transform senoContainer;
 
+    [SerializeField] private SoundManager soundManager;
+
     [Header("Traktor Property")]
     [SerializeField] private float speed;
     [SerializeField] private float bounds;
@@ -53,6 +55,7 @@ public class TracktorMovement : MonoBehaviour
             GameObject seno = Instantiate(senoPrefab, spawnPoint.position, Quaternion.identity); // senoPrefab.transform.rotation
             Destroy(seno, 15f);
             seno.transform.SetParent(senoContainer);
+            soundManager.PlayShootClip();
         }
     }
 }

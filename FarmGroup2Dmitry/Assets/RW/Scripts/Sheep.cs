@@ -22,6 +22,7 @@ public class Sheep : MonoBehaviour
     private MeshRenderer nb;
 
     [SerializeField] private SoundManager soundManager;
+    [SerializeField] private ScoreManager scoreManager;
 
 
     private void Awake()
@@ -35,9 +36,9 @@ public class Sheep : MonoBehaviour
         int randomSheepPropertyIndex = Random.Range(0, sheepProperty.Count);
 
 
-        Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
-        sheepProperty[randomSheepPropertyIndex].Name = "Baran"; //set
-        Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
+        //Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
+        //sheepProperty[randomSheepPropertyIndex].Name = "Baran"; //set
+        //Debug.Log(sheepProperty[randomSheepPropertyIndex].Name); // get
 
 
 
@@ -67,7 +68,7 @@ public class Sheep : MonoBehaviour
         Destroy(gameObject, 0.9f);
 
         soundManager.PlaySheepHitClip();
-
+        scoreManager.AddSaveSheep();
     }
 
 
@@ -86,6 +87,11 @@ public class Sheep : MonoBehaviour
         moveSpeed = startSpeed; //состояние идти
     }
 
-
+    public void DestroySheep()
+    {
+        soundManager.PlayDropClip();
+        scoreManager.AddDropSheep();
+        Destroy(gameObject);
+    }
 
 }

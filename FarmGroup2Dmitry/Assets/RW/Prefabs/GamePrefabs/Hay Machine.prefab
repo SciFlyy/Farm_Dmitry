@@ -9831,6 +9831,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 751196745173276326}
   fireRate: 1
   senoContainer: {fileID: 0}
+  soundManager: {fileID: 11400000, guid: ef35278defba52c44961494e3c553e32, type: 2}
   speed: 20
   bounds: 22
 --- !u!114 &1810597011
