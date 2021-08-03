@@ -9790,6 +9790,8 @@ GameObject:
   - component: {fileID: 3456464462788096075}
   - component: {fileID: 1015594246953308384}
   - component: {fileID: 1810597011}
+  - component: {fileID: 2075612994}
+  - component: {fileID: 2075612995}
   m_Layer: 0
   m_Name: Hay Machine
   m_TagString: Untagged
@@ -9834,6 +9836,8 @@ MonoBehaviour:
   soundManager: {fileID: 11400000, guid: ef35278defba52c44961494e3c553e32, type: 2}
   speed: 20
   bounds: 22
+  senoPoolSize: 4
+  senos: []
 --- !u!114 &1810597011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9844,5 +9848,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a24c73675a18811469ccdb4417a78e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2075612994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6476380882833849692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2075612995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6476380882833849692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0030ee4b401e1449a8e3dc4efaf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

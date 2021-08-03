@@ -307,17 +307,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 217b4a3014984b140b9456560e4abf9a, type: 3}
---- !u!114 &375699978 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1625982085080720743, guid: 217b4a3014984b140b9456560e4abf9a, type: 3}
-  m_PrefabInstance: {fileID: 375699977}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69c617a63b2aa384291741d6c9dce5ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1092,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1015594246953308384, guid: 775e4440285946c4489c2494081ba7e5, type: 3}
   m_PrefabInstance: {fileID: 4813274973553760031}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075612993}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fcb8077b1a8f1949a823968adc27cdc, type: 3}
@@ -1456,6 +1445,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1478513262}
   - component: {fileID: 1478513261}
+  - component: {fileID: 1478513264}
+  - component: {fileID: 1478513263}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1475,6 +1466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcabdbbf6105636409779e9c0f99acab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSheepText: {fileID: 1971790872}
+  dropSheepText: {fileID: 800951114}
+  scoreManager: {fileID: 11400000, guid: 564e848afef838e4591c297713872efb, type: 2}
 --- !u!4 &1478513262
 Transform:
   m_ObjectHideFlags: 0
@@ -1489,6 +1483,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1478513263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478513260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d6c39032c5366488dba8b45330ad13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 7523cafb638c4e4449b813e1f8bfa924, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 564e848afef838e4591c297713872efb, type: 2}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: AddDropSheep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1478513261}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UpdateScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1478513264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478513260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d6c39032c5366488dba8b45330ad13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 46369a138d1842a48a6e877be5f8296d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 564e848afef838e4591c297713872efb, type: 2}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: AddSaveSheep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1478513261}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UpdateScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1508344888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,51 +2476,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024915467}
   m_CullTransparentMesh: 1
---- !u!1 &2075612993 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6476380882833849692, guid: 775e4440285946c4489c2494081ba7e5, type: 3}
-  m_PrefabInstance: {fileID: 4813274973553760031}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &2075612994
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075612993}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2075612995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075612993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0030ee4b401e1449a8e3dc4efaf52b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SaveSheepEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 375699978}
-        m_TargetAssemblyTypeName: Sheep, Assembly-CSharp
-        m_MethodName: SaveSheep
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &3138555644454937
 PrefabInstance:
   m_ObjectHideFlags: 0

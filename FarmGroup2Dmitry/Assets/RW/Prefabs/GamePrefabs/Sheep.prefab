@@ -137,4 +137,5 @@ MonoBehaviour:
   sheepOffset: {x: 0, y: 5, z: 0}
   jumpForce: 200
   soundManager: {fileID: 11400000, guid: ef35278defba52c44961494e3c553e32, type: 2}
-  scoreManager: {fileID: 11400000, guid: 564e848afef838e4591c297713872efb, type: 2}
+  SheepSavedEvent: {fileID: 11400000, guid: 46369a138d1842a48a6e877be5f8296d, type: 2}
+  SheepDroppedEvent: {fileID: 11400000, guid: 7523cafb638c4e4449b813e1f8bfa924, type: 2}
